@@ -1,4 +1,4 @@
-fDraw(fSphere(10));
+fDraw(fCylinder(10, r1=5, r2=2));
 
 ///// Drawing modules
 module fDraw(model) {
@@ -45,17 +45,19 @@ function fCube(dims) = (
   ]
 );
 
-function fCylinder(h, r, sides=36) = (
+function fCylinder(h, r, r1=undef, r2=undef, sides=36) = (
   let(degrees_per_side = 360 / sides,
-      side_range = [0 : sides - 1])
+      side_range = [0 : sides - 1],
+      int_r1 = (r1 == undef) ? r : r1,
+      int_r2 = (r2 == undef) ? r : r2)
   [
     [fKeyPoints,
-      fCartesianProduct([
-        [for (side = side_range)
-         let (angle = side * degrees_per_side)
-         [r * sin(angle), r * cos(angle)]],
-        [0, h],
-      ]),
+      [for (side = side_range)
+       for (params = [[int_r1, 0], [int_r2, h]])
+       let (angle = side * degrees_per_side,
+            radius = params[0],
+            height = params[1])
+        [radius * sin(angle), radius * cos(angle), height]],
     ],
     [fKeyFaces, concat(
       // bottom
