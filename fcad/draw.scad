@@ -1,10 +1,10 @@
 module fDraw(model) {
-  polyhedron(points=fPoints(model), faces=fFaces(model));
+  polyhedron(points=fModelPoints(model), faces=fModelFaces(model));
 }
 
 module fDrawN(model, scales) {
   fDraw(model);
-  points = fPoints(model);
+  points = fModelPoints(model);
   model_max = fMaxPoint(model);
   translation =
     [for (axis = [0 : 2])

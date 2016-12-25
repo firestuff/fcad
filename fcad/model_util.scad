@@ -1,11 +1,11 @@
 function fMinPoint(model) = (
   [for (axis = [0 : 2])
-   min([for (point = fPoints(model)) point[axis]])]
+   min([for (point = fModelPoints(model)) point[axis]])]
 );
 
 function fMaxPoint(model) = (
   [for (axis = [0 : 2])
-   max([for (point = fPoints(model)) point[axis]])]
+   max([for (point = fModelPoints(model)) point[axis]])]
 );
 
 function fCenterPoint(model) = (

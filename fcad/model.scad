@@ -1,7 +1,7 @@
 /// model:
 ///   fKeyType "type" fType(): fTypeModel "model"
-///   fKeyPoints "points" fPoints(): [ [x, y, z], ... ]
-///   fKeyFaces "faces" fFaces(): [ [ pointIdx, ... ], ... ]
+///   fKeyPoints "points" fModelPoints(): [ [x, y, z], ... ]
+///   fKeyFaces "faces" fModelFaces(): [ [ pointIdx, ... ], ... ]
 
 fTypeModel = "model";
 
@@ -20,10 +20,10 @@ function fModel(points, faces) = (
   ]
 );
 
-function fPoints(model) = (
+function fModelPoints(model) = (
   fMapLookup(fKeyPoints, model)
 );
 
-function fFaces(model) = (
+function fModelFaces(model) = (
   fMapLookup(fKeyFaces, model)
 );

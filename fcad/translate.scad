@@ -1,13 +1,12 @@
 function fTranslate(model, translation) = (
-  [
-    [fKeyPoints,
-      [for (point = fPoints(model))
+  fModel(
+    points=
+      [for (point = fModelPoints(model))
         [for (axis = [0 : 2])
          point[axis] + translation[axis]]
-      ]
-    ],
-    [fKeyFaces, fFaces(model)],
-  ]
+      ],
+    faces=fModelFaces(model)
+  )
 );
 
 function fZeroN(model, scales) = (

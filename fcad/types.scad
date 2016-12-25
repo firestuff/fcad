@@ -44,8 +44,8 @@ function fIsVector(x) = (
 );
 
 // Helpers
-function fMapLookup(key, model) = (
-  [for (pair = model)
+function fMapLookup(key, map) = (
+  [for (pair = map)
    let (iter_key = pair[0],
         iter_value = pair[1])
    if (key == iter_key)
