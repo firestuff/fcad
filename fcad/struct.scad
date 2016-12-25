@@ -5,6 +5,13 @@
 fKeyPoints = "points";
 fKeyFaces = "faces";
 
+function fModel(points, faces) = (
+  [
+    [fKeyPoints, points],
+    [fKeyFaces, faces],
+  ]
+);
+
 function fPoints(model) = (
   fMapLookup(fKeyPoints, model)
 );
