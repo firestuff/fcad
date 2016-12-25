@@ -1,3 +1,5 @@
+fKeyType = "type";
+
 fTypeUndef = "undef";
 fTypeInt = "int";
 fTypeFloat = "float";
@@ -12,6 +14,7 @@ function fType(x) = (
   : abs(x) + 1 > abs(x) ? fTypeFloat
   : str(x) == x ? fTypeString
   : str(x) == "false" || str(x) == "true" ? fTypeBoolean
+  : fMapLookup(fKeyType, x) ? fMapLookup(fKeyType, x)
   : (x[0] == x[0]) && len(x) != undef ? fTypeVector
   : fTypeUnknown
 );
@@ -40,6 +43,7 @@ function fIsVector(x) = (
   fType(x) == fTypeVector
 );
 
+// Helpers
 function fMapLookup(key, model) = (
   [for (pair = model)
    let (iter_key = pair[0],
