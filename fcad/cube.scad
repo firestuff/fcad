@@ -11,6 +11,10 @@ function fCube(dims) = (
       [4, 5, 7, 6], // +x
       [2, 6, 7, 3], // +y
       [1, 3, 7, 5], // +z
+    ],
+    coords=[
+      [ "/x+,/y+,-z+", fCoord(translation=[x / 2, y / 2, 0]) ],
+      [ "/x+,/y+,+z+", fCoord(translation=[x / 2, y / 2, z]) ],
     ]
   )
 );

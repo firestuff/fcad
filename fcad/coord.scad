@@ -1,7 +1,9 @@
 // Short for "coordinate system", including translation, rotation, and scale
 // coord:
 //   fKeyType "type" fType(): fTypeCoord "coord"
-//   fKeyTranslation "translation" fCoordTranslation():
+//   fKeyTranslation "translation" fCoordTranslation(): [ x, y, z ]
+//   fKeyRotation "rotation" fCoordRotation(): [ x, y, z ]
+//   fKeyScale "scale" fCoordScale(): [ x, y, z ]
 
 fTypeCoord = "coord";
 
