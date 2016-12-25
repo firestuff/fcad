@@ -1,5 +1,11 @@
 fDraw(fCylinder(10, r1=5, r2=2));
 
+///// Data structures
+
+/// model:
+///   kKeyPoints "points" fPoints(): [ [x, y, z], ... ]
+///   kKeyFaces "faces" fFaces(): [ [ pointIdx, ... ], ... ]
+
 ///// Drawing modules
 module fDraw(model) {
   polyhedron(points=fPoints(model), faces=fFaces(model));
