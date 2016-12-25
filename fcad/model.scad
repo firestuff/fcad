@@ -39,8 +39,15 @@ function fModelFaces(model) = (
 );
 
 fCoordAliases = [
-  [ "bottom", "/x+,/y+,-z+" ],
+  [ "bottom", "/x+,/y+,-z-" ],
   [ "top",    "/x+,/y+,+z+" ],
+
+  [ "back",   "-x-,/y+,/z+" ],
+  [ "front",  "+x+,/y+,/z+" ],
+
+  [ "left",   "/x+,-y-,/z+" ],
+  [ "right",  "/x+,+y+,/z+" ],
+
   [ "center", "/x+,/y+,/z+" ],
 ];
 
