@@ -7,12 +7,11 @@ module testAxes(translation=[0, 0, 0], rotation=[0, 0, 0]) {
 }
 
 testAxes(translation=[0, 0, 200], rotation=[0, 0, 0]);
-testAxes(translation=[200, 0, 0], rotation=[0, 180, ]);
-testAxes(translation=[0, 0, -200], rotation=[180, 0, 0]);
-testAxes(translation=[-200, 0, 0], rotation=[0, -90, 0]);
-testAxes(translation=[0, 200, 0], rotation=[-90, 0, 0]);
-testAxes(translation=[0, -200, 0], rotation=[90, 0, 0]);
-
+testAxes(translation=[0, 200, 0], rotation=[270, 90, 0]);
+testAxes(translation=[0, 0, -200], rotation=[0, 180, 180]);
+testAxes(translation=[0, -200, 0], rotation=[90, 90, 0]);
+testAxes(translation=[200, 0, 0], rotation=[90, 0, 90]);
+testAxes(translation=[-200, 0, 0], rotation=[270, 0, 90]);
 
 //result = fAttach(fCube(10), "top", fCube(5), "bottom5");
 //result = fRotate(fCube(5), "front", [0, 360, 360]);
