@@ -6,4 +6,3 @@ function fCartesianProduct(vecs) = (
      for (val2 = fCartesianProduct(fVectorSlice(vecs, start=1)))
      concat(val1, val2)]
 );
-

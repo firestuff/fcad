@@ -19,6 +19,9 @@ function fCylinder(h, r, r1=undef, r2=undef, sides=36) = (
       // sides
       [for (side = side_range)
         [for (vertex = [2, 3, 1, 0]) (side * 2 + vertex) % (sides * 2)]]
-    )
+    ),
+    coords=[
+      [ "start", fCoord() ],
+    ]
   )
 );

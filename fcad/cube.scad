@@ -13,8 +13,14 @@ function fCube(dims) = (
       [1, 3, 7, 5], // +z
     ],
     coords=[
-      [ "/x+,/y+,-z+", fCoord(translation=[x / 2, y / 2, 0]) ],
-      [ "/x+,/y+,+z+", fCoord(translation=[x / 2, y / 2, z]) ],
+      [ "-x-,/y-,/z-", fCoord(translation=[    0, y / 2, z / 2], rotation=[  0, -90,   0]) ],
+      [ "+x+,/y+,/z+", fCoord(translation=[    x, y / 2, z / 2], rotation=[  0,  90,   0]) ],
+
+      [ "/x-,-y-,/z-", fCoord(translation=[x / 2,     0, z / 2], rotation=[-90,   0,   0]) ],
+      [ "/x+,+y+,/z+", fCoord(translation=[x / 2,     y, z / 2], rotation=[ 90,   0,   0]) ],
+
+      [ "/x-,/y-,-z-", fCoord(translation=[x / 2, y / 2,     0], rotation=[180,   0, 180]) ],
+      [ "/x+,/y+,+z+", fCoord(translation=[x / 2, y / 2,     z], rotation=[  0,   0,   0]) ],
     ]
   )
 );

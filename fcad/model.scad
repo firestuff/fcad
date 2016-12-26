@@ -4,6 +4,13 @@
 ///   fKeyFaces "faces" fModelFaces(): [ [ pointIdx, ... ], ... ]
 ///   fKeyCoords "coords" fModelCoords(): [ [ name, coord ], ... ]
 
+/// OpenSCAD uses right-handed coordinates. We name directions on these axes:
+///   X: left (-), right (+)
+///   Y: back (-), front (+)
+///   Z: bottom (-), top (+)
+/// Coordinate systems that attach to surfaces should generally have the Z axis
+/// normal to the surface.
+///
 /// Standard model coords names:
 ///
 ///   [-/+] edge ("/" is midpoint)
@@ -39,14 +46,14 @@ function fModelFaces(model) = (
 );
 
 fCoordAliases = [
-  [ "bottom", "/x+,/y+,-z-" ],
+  [ "left",   "-x-,/y-,/z-" ],
+  [ "right",  "+x+,/y+,/z+" ],
+
+  [ "back",   "/x-,-y-,/z-" ],
+  [ "front",  "/x+,+y+,/z+" ],
+
+  [ "bottom", "/x-,/y-,-z-" ],
   [ "top",    "/x+,/y+,+z+" ],
-
-  [ "back",   "-x-,/y+,/z+" ],
-  [ "front",  "+x+,/y+,/z+" ],
-
-  [ "left",   "/x+,-y-,/z+" ],
-  [ "right",  "/x+,+y+,/z+" ],
 
   [ "center", "/x+,/y+,/z+" ],
 ];

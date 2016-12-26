@@ -35,3 +35,11 @@ function fCoordRotation(coord) = (
 function fCoordScale(coord) = (
   fMapLookup(fKeyScale, coord)
 );
+
+function fCoordInverse(coord) = (
+  fCoord(
+    translation=[0, 0, 0] - fCoordTranslation(coord),
+    rotation=[180, 180, 180] + fCoordRotation(coord),
+    scale=1 / fCoordScale(coord)
+  )
+);
