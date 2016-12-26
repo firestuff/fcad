@@ -7,9 +7,9 @@ module testAxes(translation=[0, 0, 0], rotation=[0, 0, 0]) {
 }
 
 testAxes(translation=[0, 0, 200], rotation=[0, 0, 0]);
-testAxes(translation=[0, 200, 0], rotation=[270, 90, 0]);
-testAxes(translation=[0, 0, -200], rotation=[0, 180, 180]);
-testAxes(translation=[0, -200, 0], rotation=[90, 90, 0]);
+testAxes(translation=[0, 200, 0], rotation=[270, 270, 0]);
+testAxes(translation=[0, 0, -200], rotation=[180, 0, 0]);
+testAxes(translation=[0, -200, 0], rotation=[90, 270, 0]);
 testAxes(translation=[200, 0, 0], rotation=[90, 0, 90]);
 testAxes(translation=[-200, 0, 0], rotation=[270, 0, 90]);
 
